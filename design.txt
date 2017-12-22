@@ -1,0 +1,29 @@
+Functions:
+
+PERM [list] : returns a list of all of the permutations of the list
+
+CHOOSE number : returns the function CHOOSE-N
+
+CHOOSE-N [list] : returns a list of all the N-length subsets of [list]
+
+CHOOSE [[buckets]] : returns a list of all the possible combinations achieved by picking one item from each bucket
+
+BUCKET [buckets:string] : returns a function BUCKET-L as follows:
+
+BUCKET-L [list] : returns a 'list of lists' of elements in the input list according to which 'bucket' in [buckets] they match. non matching items are excluded so this can be used to filter an input list
+
+READ file:string : returns a list of the line separated values in 'file'
+
+
+Rules:
+expression = (fn expression)
+expression = [list]
+expression = number
+expression = "string"
+
+
+list = [expression, more_expressions]
+more_expr = expression, more_expr
+more_expr = EPSILON
+
+fn = CHOOSE | BUCKET | PERM
